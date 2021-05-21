@@ -1,5 +1,7 @@
 class MainController < ApplicationController
-  before_action :authenticate_user!
-  def home
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end
