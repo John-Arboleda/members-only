@@ -1,7 +1,7 @@
 
-<% if member_signed_in? %>
+<% if user_signed_in? %>
 <p>
-	Posted by: <strong><%= current_member.username %></strong>
+	Posted by: <strong><%= current_user.username %></strong>
 </p>
 <p>
   <strong>Body:</strong>
