@@ -1,0 +1,38 @@
+
+<% if user_signed_in? %>
+
+<div>    
+  <%= render 'form', post: @post %>
+</div> 
+<% else %>
+
+<main>
+  <h1 class="cover-heading">Welcome to the Exclusive Clubhouse</h1>
+  <p class="lead">In here, members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it. So <em>Sign up</em> or <em>Sign In</em> to create a post!</p>
+  <p class="lead">
+    <%= link_to 'Create Post', new_post_path, class: "btn btn-lg btn-secondary" %>
+  </p>
+</main>
+
+  
+<% end %>
+ 
+<% @posts.each do |post| %>  
+
+
+
+<div>
+  <div>
+    <strong>posted:</strong> <em> <%= time_ago_in_words(post.created_at) %> ago</em>
+  </div>
+  <div>
+    <blockquote>
+      <p><%= post.body %></p>
+      <% if user_signed_in? %>
+      <footer><%= post.user.username %></footer>
+    </blockquote>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
