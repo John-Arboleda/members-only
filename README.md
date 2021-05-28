@@ -1,24 +1,61 @@
-# README
+# MEMBERS ONLY _ AUTHENTICATION
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project, an exclusive clubhouse where members can write anonymous posts is built. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
 
-Things you may want to cover:
+### Index View
 
-* Ruby version
+![index_view](app/assets/images/index_view.png)
 
-* System dependencies
+### Sign Up View
 
-* Configuration
+![sign_up_view](app/assets/images/sign_up_view.png)
 
-* Database creation
+## Built With
 
-* Database initialization
+- Ruby on Rails
+- Ruby ( version => 2.7.3 )
+- Bootstrap 5.0
 
-* How to run the test suite
+## Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+### To get a local copy up and running follow these simple example steps.
 
-* Deployment instructions
+1. To clone this repo run this code on a terminal window: 
 
-* ...
+   git clone git@github.com:John-Arboleda/members-only.git
+
+2. install gems by this command
+
+   bundle install
+
+3. migrate the database by this command
+
+   rails db:migrate
+
+4. Open rails console in the terminal to start to add users, posts and comments by this command
+
+   Rails console
+
+## Authors
+
+**John Arboleda**
+- GitHub: [@John-Arboleda](https://github.com/John-Arboleda)
+- Twitter: [@John_J_Arboleda](https://twitter.com/John_J_Arboleda)
+- LinkedIn: [@john-arboleda](https://www.linkedin.com/in/john-arboleda/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page]( https://github.com/John-Arboleda/members-only/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+[THE ODIN PROJECT](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/authentication)
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
