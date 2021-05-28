@@ -14,6 +14,7 @@ In this project, an exclusive clubhouse where members can write anonymous posts 
 
 - Ruby on Rails
 - Ruby ( version => 2.7.3 )
+- yarn
 - Bootstrap 5.0
 
 ## Installation
@@ -22,19 +23,19 @@ In this project, an exclusive clubhouse where members can write anonymous posts 
 
 1. To clone this repo run this code on a terminal window: 
 
-   git clone git@github.com:John-Arboleda/members-only.git
+   `git clone git@github.com:John-Arboleda/members-only.git`
 
 2. install gems by this command
 
-   bundle install
+   `bundle install`
 
 3. migrate the database by this command
 
-   rails db:migrate
+   `rails db:migrate`
 
-4. Open rails console in the terminal to start to add users, posts and comments by this command
+4. Start the rails server with
 
-   Rails console
+   `rails server`
 
 ## Authors
 
