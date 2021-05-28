@@ -1,14 +1,14 @@
 
 <% if user_signed_in? %>
 
-<div>    
+<div class="my-5">    
   <%= render 'form', post: @post %>
 </div> 
 <% else %>
 
-<main>
-  <h1 class="cover-heading">Welcome to the Exclusive Clubhouse</h1>
-  <p class="lead">In here, members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it. So <em>Sign up</em> or <em>Sign In</em> to create a post!</p>
+<main role="main" class="inner cover my-5 container">
+  <h1 class="cover-heading">Welcome to the Members Only</h1>
+  <p class="lead">This is an exclusive clubhouse where members can write anonymous posts. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it. So <em>Sign up</em> or <em>Sign In</em> to create a post!</p>
   <p class="lead">
     <%= link_to 'Create Post', new_post_path, class: "btn btn-lg btn-secondary" %>
   </p>
@@ -17,22 +17,26 @@
   
 <% end %>
  
+
+<div class="row">
 <% @posts.each do |post| %>  
 
-
-
-<div>
-  <div>
+<div class="p-2 col-sm-6 col-lg-4">
+<div class="card">
+  <div class="card-header">
     <strong>posted:</strong> <em> <%= time_ago_in_words(post.created_at) %> ago</em>
   </div>
-  <div>
-    <blockquote>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
       <p><%= post.body %></p>
       <% if user_signed_in? %>
-      <footer><%= post.user.username %></footer>
+      <footer class="blockquote-footer"><%= post.user.username %></footer>
     </blockquote>
     <% end %>
   </div>
 </div>
+</div>
 
 <% end %>
+
+</div>
