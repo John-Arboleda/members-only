@@ -14,7 +14,7 @@ In this project, an exclusive clubhouse where members can write anonymous posts 
 
 - Ruby on Rails
 - Ruby ( version => 2.7.3 )
-- yarn
+- Yarn
 - Bootstrap 5.0
 
 ## Installation
