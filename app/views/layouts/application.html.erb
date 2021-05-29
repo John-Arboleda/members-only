@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>MembersOnly</title>
+    <title>Members Only</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,39 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand ms-4" href="/">Members Only</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <div class="ms-auto d-flex">
+
+    <% if user_signed_in? %>
+    <div>
+      <%= link_to current_user.username, edit_user_registration_path, class: "text-white" %>
+    </div> 
+
+    <div>
+      <%= link_to 'Logout', destroy_user_session_path, class: "btn btn-md btn-primary ms-5 me-5", method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
+
+    <% else %>
+
+    <div>
+      <%= link_to 'Sign In', new_user_session_path, class: "btn btn-md btn-primary" %>
+    </div>
+    <div>
+      <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-md btn-primary ms-3 me-5" %>
+    </div>
+    <% end %>
+  </div>
+</nav>
+
+<p class="notice"><%= notice %></p> 
+<p class="alert"><%= alert %></p> 
+<%= yield %>
+</body>
+
 </html>

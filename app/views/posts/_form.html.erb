@@ -1,0 +1,21 @@
+<%= form_for @post do |form| %>
+<% if post.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+  <ul>
+    <% post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="container">
+<div class="form-group d-flex justify-content-center align-items-center">
+  <%= form.text_area :body, autofocus: true, class: "form-control" %>
+  <%= form.button 'Create Post', class: "btn btn-primary p-2 ms-4" %>
+</div>
+</div>
+
+<% end %>
